@@ -23,5 +23,4 @@ Tecnologias envolvidas:
 - TypeScript
 - React
 - Tailwind CSS
-=======
-# Trabalho-Engenharia-De-Software
+
