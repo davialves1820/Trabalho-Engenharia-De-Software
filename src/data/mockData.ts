@@ -44,8 +44,8 @@ export const mockEmployees: Employee[] = [
     department: 'TI',
     status: 'ativo',
     consentStatus: 'válido',
-    consentDate: '2024-01-15',
-    consentExpiry: '2025-01-15',
+    consentDate: '2025-01-15',
+    consentExpiry: '2026-01-15',
     dataTypes: ['dados_pessoais', 'dados_profissionais', 'dados_bancarios']
   },
   {
@@ -57,8 +57,8 @@ export const mockEmployees: Employee[] = [
     department: 'Recursos Humanos',
     status: 'ativo',
     consentStatus: 'expira_em_30_dias',
-    consentDate: '2023-12-01',
-    consentExpiry: '2024-12-01',
+    consentDate: '2024-10-01',
+    consentExpiry: '2025-10-27',
     dataTypes: ['dados_pessoais', 'dados_profissionais']
   },
   {
@@ -70,8 +70,8 @@ export const mockEmployees: Employee[] = [
     department: 'Processo Seletivo',
     status: 'inativo',
     consentStatus: 'expirado',
-    consentDate: '2023-06-01',
-    consentExpiry: '2024-06-01',
+    consentDate: '2024-06-01',
+    consentExpiry: '2025-06-01',
     dataTypes: ['dados_pessoais', 'curriculo']
   },
 ];
@@ -83,7 +83,7 @@ export const mockAccessLogs: AccessLog[] = [
     userName: 'RH Manager',
     action: 'visualizou',
     resource: 'dados_funcionario_joao_silva',
-    timestamp: '2024-12-26 14:30:00',
+    timestamp: '2025-09-25 14:30:00',
     ipAddress: '192.168.1.100',
     details: 'Acesso aos dados pessoais para atualização cadastral'
   },
@@ -93,7 +93,7 @@ export const mockAccessLogs: AccessLog[] = [
     userName: 'Admin Sistema',
     action: 'exportou',
     resource: 'relatorio_consentimentos',
-    timestamp: '2024-12-26 09:15:00',
+    timestamp: '2025-09-24 09:15:00',
     ipAddress: '192.168.1.50',
     details: 'Exportação de relatório mensal de consentimentos'
   },
@@ -103,7 +103,7 @@ export const mockAccessLogs: AccessLog[] = [
     userName: 'RH Manager',
     action: 'cadastrou',
     resource: 'novo_funcionario_ana_costa',
-    timestamp: '2024-12-25 16:45:00',
+    timestamp: '2025-09-23 16:45:00',
     ipAddress: '192.168.1.100',
     details: 'Cadastro de novo funcionário com coleta de consentimento'
   }
@@ -117,7 +117,7 @@ export const mockAlerts: Alert[] = [
     description: 'O consentimento para tratamento de dados está próximo do vencimento',
     employeeId: '2',
     employeeName: 'Maria Santos',
-    created: '2024-12-26',
+    created: '2025-09-25',
     status: 'pendente'
   },
   {
@@ -127,7 +127,7 @@ export const mockAlerts: Alert[] = [
     description: 'Detectados acessos aos dados após 22h nos últimos 3 dias',
     employeeId: '1',
     employeeName: 'João Silva',
-    created: '2024-12-25',
+    created: '2025-09-24',
     status: 'pendente'
   },
   {
@@ -137,7 +137,7 @@ export const mockAlerts: Alert[] = [
     description: 'Alguns dados podem ser elegíveis para exclusão conforme política de retenção',
     employeeId: '3',
     employeeName: 'Pedro Oliveira',
-    created: '2024-12-24',
+    created: '2025-09-23',
     status: 'resolvido'
   }
 ];

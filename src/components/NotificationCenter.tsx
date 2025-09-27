@@ -43,7 +43,7 @@ const mockNotifications: Notification[] = [
         description: 'Acesso aos dados bancários de Maria Santos expira em 5 dias',
         employeeName: 'Maria Santos',
         priority: 'high',
-        created: '2024-12-26T10:30:00',
+        created: '2025-09-25T10:30:00',
         read: false,
         daysUntilExpiry: 5
     },
@@ -54,7 +54,7 @@ const mockNotifications: Notification[] = [
         description: 'Múltiplos acessos aos dados pessoais fora do horário comercial',
         employeeName: 'João Silva',
         priority: 'critical',
-        created: '2024-12-26T08:15:00',
+        created: '2025-09-24T08:15:00',
         read: false
     },
     {
@@ -64,7 +64,7 @@ const mockNotifications: Notification[] = [
         description: 'Dados de Pedro Oliveira não foram acessados há 180 dias',
         employeeName: 'Pedro Oliveira',
         priority: 'medium',
-        created: '2024-12-25T16:45:00',
+        created: '2025-09-23T16:45:00',
         read: true
     },
     {
@@ -74,11 +74,12 @@ const mockNotifications: Notification[] = [
         description: 'Acesso aos dados profissionais de Ana Costa expira em 15 dias',
         employeeName: 'Ana Costa',
         priority: 'medium',
-        created: '2024-12-25T14:20:00',
+        created: '2025-09-22T14:20:00',
         read: false,
         daysUntilExpiry: 15
     }
-    ];
+];
+
 
 const NotificationCenter = ({ isOpen, onClose }: NotificationCenterProps) => {
 const [notifications, setNotifications] = useState<Notification[]>(mockNotifications);
