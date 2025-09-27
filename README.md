@@ -8,7 +8,7 @@
 git clone <https://github.com/davialves1820/Trabalho-Engenharia-De-Software>
 
 
-cd <rh>
+cd <Trabalho-Engenharia-De-Software>
 
 
 npm i
