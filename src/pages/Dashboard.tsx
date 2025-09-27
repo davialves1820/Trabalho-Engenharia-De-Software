@@ -48,7 +48,7 @@ const Dashboard = () => {
   const getConsentBadgeVariant = (status: string) => {
     switch (status) {
       case 'válido': return 'default';
-      case 'expira_em_30_dias': return 'secondary';
+      case 'expira_em_30 dias': return 'secondary';
       case 'expirado': return 'destructive';
       default: return 'outline';
     }
