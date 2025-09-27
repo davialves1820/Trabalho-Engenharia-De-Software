@@ -7,6 +7,9 @@ import { Input } from '@/components/ui/input';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { useAuth } from '@/hooks/useAuth';
 import { mockEmployees, mockAccessLogs, mockAlerts } from '@/data/mockData';
+import UserPermissionSettings from '@/components/UserPermissionSettings';
+import UserConsentSettings from '@/components/UserConsentSettings';
+import NotificationCenter from '@/components/NotificationCenter';
 import { 
   Users, 
   AlertTriangle, 
@@ -16,7 +19,8 @@ import {
   Clock,
   FileText,
   UserPlus,
-  Settings
+  Settings,
+  Bell
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -24,6 +28,9 @@ const Dashboard = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedEmployeeForPermissions, setSelectedEmployeeForPermissions] = useState<{id: string, name: string} | null>(null);
+  const [showNotifications, setShowNotifications] = useState(false);
+  const [showUserConsent, setShowUserConsent] = useState(false);
 
   const filteredEmployees = mockEmployees.filter(emp => 
     emp.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -66,6 +73,22 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="flex items-center space-x-2">
+            <Button 
+              variant="outline" 
+              onClick={() => setShowUserConsent(true)}
+              className="mr-2"
+            >
+              <Shield className="h-4 w-4 mr-2" />
+              Minhas Permissões
+            </Button>
+            <Button 
+              variant="outline" 
+              onClick={() => setShowNotifications(true)}
+              className="mr-2"
+            >
+              <Bell className="h-4 w-4 mr-2" />
+              Notificações
+            </Button>
             {(user?.role === 'admin' || user?.role === 'rh') && (
               <Button 
                 variant="outline" 
@@ -206,6 +229,14 @@ const Dashboard = () => {
                         <div className="text-sm text-muted-foreground">
                           <p>Expira: {new Date(employee.consentExpiry).toLocaleDateString('pt-BR')}</p>
                         </div>
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => setSelectedEmployeeForPermissions({id: employee.id, name: employee.name})}
+                        >
+                          <Settings className="h-4 w-4 mr-1" />
+                          Permissões
+                        </Button>
                         <Button variant="outline" size="sm">
                           <FileText className="h-4 w-4 mr-1" />
                           Detalhes
@@ -303,6 +334,28 @@ const Dashboard = () => {
           </TabsContent>
         </Tabs>
       </div>
+
+      {/* Modais */}
+      {selectedEmployeeForPermissions && (
+        <UserPermissionSettings
+          isOpen={!!selectedEmployeeForPermissions}
+          onClose={() => setSelectedEmployeeForPermissions(null)}
+          employeeId={selectedEmployeeForPermissions.id}
+          employeeName={selectedEmployeeForPermissions.name}
+        />
+      )}
+
+      <NotificationCenter
+        isOpen={showNotifications}
+        onClose={() => setShowNotifications(false)}
+      />
+
+      <UserConsentSettings
+        isOpen={showUserConsent}
+        onClose={() => setShowUserConsent(false)}
+        userId={user?.id || ''}
+        userName={user?.name || ''}
+      />
     </div>
   );
 };
