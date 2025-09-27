@@ -7,9 +7,9 @@ import { Input } from '@/components/ui/input';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { useAuth } from '@/hooks/useAuth';
 import { mockEmployees, mockAccessLogs, mockAlerts } from '@/data/mockData';
-import UserPermissionSettings from '@/components/UserPermissionSettings';
-import UserConsentSettings from '@/components/UserConsentSettings';
-import NotificationCenter from '@/components/NotificationCenter';
+import UserPermissionSettings from '../components/UserPermissionSettings';
+import UserConsentSettings from '../components/UserConsentSettings';
+import NotificationCenter from '../components/NotificationCenter';
 import { 
   Users, 
   AlertTriangle, 
