@@ -1,12 +1,14 @@
 
 # Engenharia de Software
 
+## Executar localmente
+
 ```sh
 
 git clone <https://github.com/davialves1820/Trabalho-Engenharia-De-Software>
 
 
-cd <rh>
+cd <Trabalho-Engenharia-De-Software>
 
 
 npm i
@@ -24,3 +26,6 @@ Tecnologias envolvidas:
 - React
 - Tailwind CSS
 
+## Link do Protótipo
+
+[Protótipo](https://trabalho-engenharia-de-software-beta.vercel.app/)
